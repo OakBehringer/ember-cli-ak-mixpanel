@@ -24,7 +24,7 @@ module.exports = function(environment) {
 
     mixpanel: {
       enabled: true,
-      apiKey: '2d20fc540d559b8136949f069fc043ae',
+      apiKey: 'your-api-key',
       initConfig: {}
     }
   };
