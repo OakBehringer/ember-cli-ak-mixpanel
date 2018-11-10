@@ -1,51 +1,54 @@
 ember-cli-ak-mixpanel
 ==============================================================================
 
-[Short description of the addon.]
+Injects Mixpanel JS into head and provides a mixpanel service.
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-cli-ak-mixpanel
+ember install ember-cli-mixpanel-service
 ```
 
+Setup
+------------------------------------------------------------------------------
+
+`environment.js` requires some configuration to enable mixpanel:
+
+```javascript
+module.exports = function(environment) {
+  let ENV = {
+    mixpanel: {
+      enabled: true,
+      apiKey: 'your-api-key',
+      initConfig: {}
+    }
+  };
+  
+  return ENV;
+};
+```
 
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+After installation, inject the service into a controller, component, etc. Then use the call
+function to access mixpanel functionality. Dot notation can be used to denote functions. For example,
+you can use `.call('people.set', 'gender', 'f')` as you would use `window.mixpanel.people.set('gender', 'f')`.
 
+```javascript
+mixpanel: inject(),
 
-Contributing
-------------------------------------------------------------------------------
+actions: {
+  trackSomething() {
+    this.get('mixpanel').call('track', 'some-event-name', {}, function() { alert('in the track callback!'); });
+  },
+  
+  talkToMixpanelPeople() {
+    this.get('mixpanel').call('people.set', 'gender', 'm');
+  }
+}
+```
 
-### Installation
-
-* `git clone <repository-url>`
-* `cd ember-cli-ak-mixpanel`
-* `npm install`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Running tests
-
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+If the service is not configured or enabled, `.call()` will silently disregard anything you pass to it. This is helpful
+for dev scenarios where you may not wish to send events to Mixpanel.  

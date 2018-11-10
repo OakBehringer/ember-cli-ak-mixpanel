@@ -1,0 +1,26 @@
+
+<fieldset>
+  <legend>Identify a user</legend>
+  <label for="user-id">User ID:</label><br>
+  {{input id="user-id" value=userId}}<br>
+  <br>
+  <button {{action "idUser" userId}}>ID the User!</button>
+</fieldset>
+
+<fieldset>
+  <legend>Setup a person's information</legend>
+  <label for="peep-set-key">Key:</label><br>
+  {{input id="peep-set-key" value=peepSetKey}}<br>
+  <label for="peep-set-val">Val:</label><br>
+  {{input id="peep-set-val" value=peepSetVal}}<br>
+  <br>
+  <button {{action "setPeepInfo" peepSetKey peepSetVal}}>Set the person's info!</button>
+</fieldset>
+
+<fieldset>
+  <legend>Track an event</legend>
+  <label for="event-val">Event Name:</label><br>
+  {{input id="event-val" value=eventVal}}<br>
+  <br>
+  <button {{action "trackEvent" eventVal}}>Track It!</button>
+</fieldset>

@@ -20,6 +20,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    mixpanel: {
+      enabled: true,
+      apiKey: '2d20fc540d559b8136949f069fc043ae',
+      initConfig: {}
     }
   };
 
