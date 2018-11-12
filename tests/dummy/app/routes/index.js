@@ -7,7 +7,7 @@ export default Route.extend({
 
   beforeModel() {
     let mp = this.get('mixpanel');
-    console.log('Mixpanel ' + (mp.isReady() ? 'is' : 'is not') + ' ready');
+    console.log('Mixpanel ' + (mp.shouldCom() ? 'is' : 'is not') + ' going to comm');
   }
 
 });

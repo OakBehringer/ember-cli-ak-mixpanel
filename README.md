@@ -1,7 +1,7 @@
 ember-cli-ak-mixpanel
 ==============================================================================
 
-Injects Mixpanel JS into head and provides a mixpanel service.
+Provides a mixpanel service and configuration routine. Also includes NPM Mixpanel-Browser code.
 
 Installation
 ------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ module.exports = function(environment) {
   let ENV = {
     mixpanel: {
       enabled: true,
-      apiKey: 'your-api-key',
+      token: 'your-api-token',
       initConfig: {}
     }
   };
@@ -28,6 +28,9 @@ module.exports = function(environment) {
   return ENV;
 };
 ```
+
+Note: This addon will not inject anything into your document head, nor does it require you to include the mixpanel
+source! Doing so may cause conflicts.  
 
 Usage
 ------------------------------------------------------------------------------
@@ -52,3 +55,10 @@ actions: {
 
 If the service is not configured or enabled, `.call()` will silently disregard anything you pass to it. This is helpful
 for dev scenarios where you may not wish to send events to Mixpanel.  
+
+
+Dummy
+------------------------------------------------------------------------------
+
+There is a dummy app that you may run to test this addon. Do not forget to set your mixpanel token in the dummy
+app's configuration. 
