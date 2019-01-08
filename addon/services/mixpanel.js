@@ -13,7 +13,6 @@ export default Service.extend({
     if (this.shouldCom()) {
       let initConfig = ENV.mixpanel.initConfig ? ENV.mixpanel.initConfig : {};
       initConfig.track_pageview = false;
-      initConfig.disable_persistence = true;
       mixpanel.init(ENV.mixpanel.token, initConfig);
     }
   },
