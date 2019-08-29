@@ -24,10 +24,10 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "ember-auto-import": "^1.2.15",
     "mixpanel-browser": "^2.25.0"
   },
   "devDependencies": {
+    "ember-auto-import": "^1.2.15",
     "ember-cli-babel": "^6.6.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
