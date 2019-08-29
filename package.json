@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-ak-mixpanel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight service for Ember apps that need to communicate with Mixpanel to track events, etc",
   "keywords": [
     "Mixpanel",
