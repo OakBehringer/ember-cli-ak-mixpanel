@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-ak-mixpanel",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Lightweight service for Ember apps that need to communicate with Mixpanel to track events, etc",
   "keywords": [
     "Mixpanel",
@@ -24,11 +24,11 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "ember-auto-import": "^1.2.4",
+    "ember-cli-babel": "^6.6.0",
     "mixpanel-browser": "^2.25.0"
   },
   "devDependencies": {
-    "ember-auto-import": "^1.2.15",
-    "ember-cli-babel": "^6.6.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.4",
